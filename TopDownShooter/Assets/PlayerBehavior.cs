@@ -8,6 +8,7 @@ public class PlayerBehavior : MonoBehaviour {
     private Vector3 objectPos;
     public float angle;
     public int bullets;
+    private bool canLoad;
 
     Vector2 inputVector = Vector2.zero;
 
@@ -18,10 +19,12 @@ public class PlayerBehavior : MonoBehaviour {
     [SerializeField] Transform bulletSpawnPos;
 
     [Header("Designer Variables")]
+    public static int maxBullets = 10;
     [SerializeField] float moveSpeed = 100;
     [SerializeField] float velocityDampening = 0.98f;
 
     void Start() {
+        bullets = maxBullets;
     }
 
     void Update() {
@@ -47,14 +50,17 @@ public class PlayerBehavior : MonoBehaviour {
 
         // spawn bullet on mouse click
         if (Input.GetButtonDown("Fire")) {
-            print(bullets);
+            print(GameManager.instance.bullets);
             // ammo check
-            //if (bullets > 0) {
+            if (bullets > 0) {
                 Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
-            //    bullets -= 1;
-            //    print(bullets);
-            //}
-            //else return;
+                bullets -= 1;
+                print(bullets);
+            }
+        }
+        if (Input.GetButtonDown("Reload") && canLoad) {
+            bullets = maxBullets;
+            print(bullets);
         }
     }
 
@@ -62,5 +68,20 @@ public class PlayerBehavior : MonoBehaviour {
         //move player with input
         rb.AddForce(moveSpeed * Time.deltaTime * inputVector);
         rb.velocity *= velocityDampening;
+    }
+    public void OnTriggerEnter2D(Collider2D other) {
+        // on entering trigger zone, relay player can load
+        if (other.CompareTag("Load")) {
+            canLoad = true;
+            Debug.Log("Hi");
+        }
+    }
+    public void OnTriggerExit2D(Collider2D other) {
+        // if player leaves zone, stops load privileges
+        if (other.CompareTag("Load")) {
+            canLoad = false;
+            Debug.Log("Bye");
+        }
+
     }
 }

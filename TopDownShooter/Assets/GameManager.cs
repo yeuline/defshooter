@@ -32,9 +32,7 @@ public class GameManager : MonoBehaviour {
     void Start() {
         //spawn in player
         instance.SpawnPlayer();
-        ////load ammo
         bullets = maxBullets;
-        print(bullets);
         // autospawn target
         InvokeRepeating("SpawnTarget", 3, 2.0f); // wait 3 seconds, repeat every 2s 
     }
@@ -72,6 +70,7 @@ public class GameManager : MonoBehaviour {
             Debug.LogWarning("Could not find a Rigidbody2D on the spawned target!");
         }
     }
+
     //enum State {
     //    title,
     //    play,
