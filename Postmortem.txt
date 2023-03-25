@@ -1,0 +1,50 @@
+ postmortem that details the initial design, how it changed over the course of the development process, the things that went well, the problems you faced (programming or design), how you approached them, what you learned from the process of making this project, and what the future of this project might be
+
+Initial Concept:
+A defense type shooter game in which the player must defend the home base by defeating and blocking enemies. The enemies will spawn randomly from the top of the screen and the player must protect the base at the bottom of the screen. This game is not an infinite shooter and the player must return to the base to reload. When defeating enemies the corpses will become barriers that block incoming enemies. 
+
+Controls:
+	- WASD for player movement
+	- space to reload (when in the reload area)
+	// right click felt more intuitive; added option
+	- Mouse (point and click) to aim and shoot
+
+// original controls worked; no need for alternative solutions
+// Alternatives:
+// 	Q/E to aim (shoot straight from player position use keys to change angle of shot)+ mouse (space?) button to shoot
+// 	arrow keys to move aiming crosshairs, shift/enter to shoot
+
+Features:
+
+	o limited bullet count
+	o reload area
+	o wall protecting home base
+		o will take damage on impact from enemy
+	o enemies will also die on impact, but will not leave a corpse
+	o enemies defeated by player shooting will become corpses that block new enemies from progressing
+	o new enemies will disappear if they hit a corpse
+	o the corpse can take a few hits, but will eventually disappear too
+		// currently takes one hit, did not have time to program durability yet
+
+Would be nice to have:
+	Timer
+	High score based on time rather than enemies defeated
+	o Start/Pause/Game Over Screen
+		// Simple Game Over Banner added; player removed on Game Over
+		// Start Screen yet
+	Sound/Particle effects when firing and on impact (bullet > enemy, enemy > wall etc.)
+	Increasing difficulty
+	increase in movement speed or durability of enemies
+
+Development Tasks:
+
+`Shooting: aim/fire method; test against stationary enemy
+`Enemy Behavior: death behavior of enemies (shot vs collision death) and corpse behavior
+`Home Base: Game Over State on collision by enemy
+`Wall: damage on collision by enemy
+`Reloading System: bullet limit and reload area, also need UI/UX for player convenience
+Other UI
+High Score/Timer
+Start/Pause/Game Over Screen
+Sound Effects
+Art Assets (Particles and Enemy/Player Sprites)

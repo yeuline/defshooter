@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -38,12 +39,14 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        //if (Input.GetButtonDown("Reload")) {
-        //    bullets = maxBullets;
-        //    print("MAX");
-        //}
+        if (Input.GetButtonDown("Pause")) {
+            SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
+            Time.timeScale = 0;
+            if (Input.GetButtonDown("Pause")) {
+                Time.timeScale = 1;
+            }
+        }
     }
-
 
     public void SpawnPlayer() {
         if (player == null) {
