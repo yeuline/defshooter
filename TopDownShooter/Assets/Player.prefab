@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3169097949335891535}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Bullet Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4372154867023653093}
   - component: {fileID: 4372154867023653095}
   - component: {fileID: 4372154867023653094}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 3265281636149509793, guid: 8856f1af810426d41a385554f31db526, type: 3}
   angle: 0
+  bullets: 0
   targetPrefab: {fileID: 5458244014699321000, guid: 8856f1af810426d41a385554f31db526, type: 3}
   rb: {fileID: 4372154867023653093}
   bulletPrefab: {fileID: 42112586465390859, guid: 16a7093ecad61674286923772971550e, type: 3}
@@ -181,7 +182,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4372154867023653089}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -212,7 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4435820781933713241}
   - component: {fileID: 2077975969338439593}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: front
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour {
         //spawn in player
         instance.SpawnPlayer();
         ////load ammo
-        //bullets = maxBullets;
-        //print(bullets);
+        bullets = maxBullets;
+        print(bullets);
         // autospawn target
         InvokeRepeating("SpawnTarget", 3, 2.0f); // wait 3 seconds, repeat every 2s 
     }

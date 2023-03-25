@@ -47,7 +47,7 @@ public class PlayerBehavior : MonoBehaviour {
 
         // spawn bullet on mouse click
         if (Input.GetButtonDown("Fire")) {
-            //print(bullets);
+            print(bullets);
             // ammo check
             //if (bullets > 0) {
                 Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
