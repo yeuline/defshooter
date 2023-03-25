@@ -9,10 +9,10 @@ public class ReloadTrigger : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        //if (Input.GetButtonDown("Reload")) {
-        //    bullets = GameManager.maxBullets;
-        //    print("MAX");
-        //}
-    }
+    //private void OnTriggerEnter2D(Collider2D other) {
+    //    //if (Input.GetButtonDown("Reload")) {
+    //    //    bullets = GameManager.maxBullets;
+    //    //    print("MAX");
+    //    //}
+    //}
 }
