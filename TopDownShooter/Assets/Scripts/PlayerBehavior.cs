@@ -46,7 +46,7 @@ public class PlayerBehavior : MonoBehaviour {
         mousePos.y -= objectPos.y;
         angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        // TODO: draw guiding line  
+        // TODO: draw guiding line for "easy" mode 
 
         // spawn bullet on mouse click
         if (Input.GetButtonDown("Fire")) {
@@ -58,6 +58,7 @@ public class PlayerBehavior : MonoBehaviour {
                 print(bullets);
             }
         }
+        // if reloading permission is granted, top off ammunition
         if (Input.GetButtonDown("Reload") && canLoad) {
             bullets = maxBullets;
             print(bullets);
@@ -82,6 +83,5 @@ public class PlayerBehavior : MonoBehaviour {
             canLoad = false;
             Debug.Log("Bye");
         }
-
     }
 }

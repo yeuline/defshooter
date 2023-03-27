@@ -38,16 +38,24 @@ public class GameManager : MonoBehaviour {
         InvokeRepeating("SpawnTarget", 3, 2.0f); // wait 3 seconds, repeat every 2s 
     }
 
+    public static bool isPaused;
+
     void Update() {
         if (Input.GetButtonDown("Pause")) {
-            SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
-            Time.timeScale = 0;
-            if (Input.GetButtonDown("Pause")) {
-                Time.timeScale = 1;
-            }
+            Pause();
+            isPaused = !isPaused;
         }
     }
-
+    void Pause() {
+        if (isPaused) {
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
+        }
+        else {
+            //SceneManager.UnloadScene(2);
+            Time.timeScale = 1f;
+        }
+    }
     public void SpawnPlayer() {
         if (player == null) {
             // Instantiate and store
@@ -73,6 +81,7 @@ public class GameManager : MonoBehaviour {
             Debug.LogWarning("Could not find a Rigidbody2D on the spawned target!");
         }
     }
+
 
     //enum State {
     //    title,
