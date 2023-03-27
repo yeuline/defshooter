@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
+        // Pause/resume game
         if (Input.GetButtonDown("Pause")) {
             SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
             Time.timeScale = 0;
