@@ -8,3 +8,6 @@ Credits:
 	- Unity Documentation
 	- Zac Emerzian's Demonstrations
 	- Pausing: https://gamedevbeginner.com/the-right-way-to-pause-the-game-in-unity/
+
+Music:
+	- https://www.playonloop.com/2016-music-loops/chubby-cat/
