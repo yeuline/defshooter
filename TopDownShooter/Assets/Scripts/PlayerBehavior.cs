@@ -70,6 +70,7 @@ public class PlayerBehavior : MonoBehaviour {
         rb.AddForce(moveSpeed * Time.deltaTime * inputVector);
         rb.velocity *= velocityDampening;
     }
+
     public void OnTriggerEnter2D(Collider2D other) {
         // on entering trigger zone, relay player can load
         if (other.CompareTag("Load")) {
