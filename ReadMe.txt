@@ -7,6 +7,4 @@ Controls:
 Credits:
 	- Unity Documentation
 	- Zac Emerzian's Demonstrations
-
-Music:
-
+	- Pausing: https://gamedevbeginner.com/the-right-way-to-pause-the-game-in-unity/

@@ -38,22 +38,22 @@ public class GameManager : MonoBehaviour {
         InvokeRepeating("SpawnTarget", 3, 2.0f); // wait 3 seconds, repeat every 2s 
     }
 
-    public static bool isPaused;
+    public static bool isPaused = false;
 
     void Update() {
         if (Input.GetButtonDown("Pause")) {
-            Pause();
             isPaused = !isPaused;
+            Pause();            
         }
     }
     void Pause() {
         if (isPaused) {
             Time.timeScale = 0f;
-            SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("Pause", LoadSceneMode.Additive);
         }
-        else {
-            //SceneManager.UnloadScene(2);
+        else {            
             Time.timeScale = 1f;
+            SceneManager.UnloadSceneAsync("Pause");
         }
     }
     public void SpawnPlayer() {

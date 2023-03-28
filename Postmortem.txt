@@ -1,7 +1,8 @@
- postmortem that details the initial design, how it changed over the course of the development process, the things that went well, the problems you faced (programming or design), how you approached them, what you learned from the process of making this project, and what the future of this project might be
-
 Initial Concept:
-A defense type shooter game in which the player must defend the home base by defeating and blocking enemies. The enemies will spawn randomly from the top of the screen and the player must protect the base at the bottom of the screen. This game is not an infinite shooter and the player must return to the base to reload. When defeating enemies the corpses will become barriers that block incoming enemies. 
+A defense type shooter game in which the player must defend the home base by defeating and blocking enemies. The enemies 
+will spawn randomly from the top of the screen and the player must protect the base at the bottom of the screen. This game 
+is not an infinite shooter and the player must return to the base to reload. When defeating enemies the corpses will become 
+barriers that block incoming enemies. 
 
 Controls:
 	- WASD for player movement
@@ -31,10 +32,11 @@ Would be nice to have:
 	High score based on time rather than enemies defeated
 	o Start/Pause/Game Over Screen
 		// Simple Game Over Banner added; player removed on Game Over
-		// Start Screen yet
-	Sound/Particle effects when firing and on impact (bullet > enemy, enemy > wall etc.)
-	Increasing difficulty
-	increase in movement speed or durability of enemies
+		// No start screen yet, Pause works (need to disable character movement)
+		// will add more information to scenes in the future.
+	x Sound/Particle effects when firing and on impact (bullet > enemy, enemy > wall etc.)
+	x Increasing difficulty
+	x increase in movement speed or durability of enemies
 
 Development Tasks:
 
@@ -43,8 +45,17 @@ Development Tasks:
 `Home Base: Game Over State on collision by enemy
 `Wall: damage on collision by enemy
 `Reloading System: bullet limit and reload area, also need UI/UX for player convenience
+	// UI not implemented
 Other UI
 High Score/Timer
 Start/Pause/Game Over Screen
 Sound Effects
 Art Assets (Particles and Enemy/Player Sprites)
+
+I am satisfied with the character controls. In the original, there were a lot of problems and it did not feel nice to use either.
+This version I spent time to adjust things so it should play nicely. The reload area was tricky for me to create, but when I finally
+got it to work I feel like I learned a lot about triggers. For this project I tried to avoid looking at codes from the internet. If
+I did google things I would directly go to the Unity documentation page for the scripts mentioned and tried to work it out myself.
+I feel like this worked better than trying to change others' code to work for my specific case. I really like this simple concept
+and I will continue to work on it in the future. I have some character/enemy concept art sketched out and am excited to add them 
+in later.
