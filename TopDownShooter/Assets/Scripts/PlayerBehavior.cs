@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour {
+
     private Vector3 mousePos;
     public Transform target; //target
     private Vector3 objectPos;
