@@ -50,17 +50,22 @@ public class PlayerBehavior : MonoBehaviour {
 
         // spawn bullet on mouse click
         if (Input.GetButtonDown("Fire")) {
-            print(GameManager.instance.bullets);
-            // ammo check
-            if (bullets > 0) {
-                Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
-                bullets -= 1;
-                print(bullets);
-            }
+            Fire();
         }
         // if reloading permission is granted, top off ammunition
         if (Input.GetButtonDown("Reload") && canLoad) {
             bullets = maxBullets;
+            print(bullets);
+        }
+    }
+    [SerializeField] AudioClip fire;
+    void Fire() {
+        print(GameManager.instance.bullets);
+        // ammo check
+        if (bullets > 0) {
+            AudioSource.PlayClipAtPoint(fire, transform.position);
+            Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
+            bullets -= 1;
             print(bullets);
         }
     }

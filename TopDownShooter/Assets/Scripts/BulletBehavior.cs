@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BulletBehavior : MonoBehaviour {
 
@@ -13,7 +14,6 @@ public class BulletBehavior : MonoBehaviour {
     [SerializeField] int damage; // damage to enemy
 
     void Start() {
-        
     }
     void Update() {
         // move bullet

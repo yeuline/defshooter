@@ -143,6 +143,7 @@ MonoBehaviour:
   bulletSpawnPos: {fileID: 3169097949335891535}
   moveSpeed: 500
   velocityDampening: 0.98
+  fire: {fileID: 8300000, guid: 9d7275c73b95cef4ab454e8b8db82da3, type: 3}
 --- !u!50 &4372154867023653093
 Rigidbody2D:
   serializedVersion: 4
@@ -216,7 +217,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2f3cb6f9165d3f8478ce73a6b4ff8bde, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.08
   m_Pitch: 1
   Loop: 1
   Mute: 0

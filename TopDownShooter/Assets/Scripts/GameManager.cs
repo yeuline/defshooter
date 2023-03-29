@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
-    [Header("Prefab References")]
+    
+[Header("Prefab References")]
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform spawnPoint;
     [SerializeField] GameObject targetPrefab;
