@@ -5,6 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
+<<<<<<< Updated upstream:TopDownShooter/Assets/GameManager.cs
+=======
+    public bool gameIsOver = false;
+    
+>>>>>>> Stashed changes:TopDownShooter/Assets/Scripts/GameManager.cs
     [Header("Prefab References")]
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform spawnPoint;
@@ -40,6 +45,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
+<<<<<<< Updated upstream:TopDownShooter/Assets/GameManager.cs
         //if (Input.GetButtonDown("Reload")) {
         //    bullets = maxBullets;
         //    print("MAX");
@@ -47,6 +53,32 @@ public class GameManager : MonoBehaviour {
     }
 
 
+=======
+        if (Input.GetButtonDown("Pause")) {
+            isPaused = !isPaused;
+            Pause();            
+        }
+        if (gameIsOver) {
+            GameOver();
+        }
+    }
+    void Pause() {
+        if (isPaused) {
+            Time.timeScale = 0f;
+            SceneManager.LoadSceneAsync("Pause", LoadSceneMode.Additive);
+        }
+        else {            
+            Time.timeScale = 1f;
+            SceneManager.UnloadSceneAsync("Pause");
+        }
+    }
+
+    void GameOver() {
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        player = GameObject.FindWithTag("Player");
+        Destroy(player);
+    }
+>>>>>>> Stashed changes:TopDownShooter/Assets/Scripts/GameManager.cs
     public void SpawnPlayer() {
         if (player == null) {
             // Instantiate and store

@@ -10,6 +10,7 @@ public class TargetBehavior : MonoBehaviour {
     public GameObject player;
     public Transform breakPrefab;
     public int currentState;
+    public bool gameIsOver;
 
     void Start() {
 
@@ -19,9 +20,9 @@ public class TargetBehavior : MonoBehaviour {
         // erase if past defense line -> game over
         if (transform.position.y < -4.5) {
             Destroy(gameObject);
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-            player = GameObject.FindWithTag("Player");
-            Destroy(player);
+            if (gameIsOver == false) {
+                gameIsOver = true;
+            }
         }
     }
 
