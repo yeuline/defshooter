@@ -46,7 +46,7 @@ Development Tasks:
 `Home Base: Game Over State on collision by enemy
 `Wall: damage on collision by enemy
 `Reloading System: bullet limit and reload area, also need UI/UX for player convenience
-	// UI not implemented
+	// simple ammo empty indicator implemented, but still need more complex UI
 Other UI
 High Score/Timer
 Start/Pause/Game Over Screen

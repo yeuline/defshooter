@@ -1,8 +1,9 @@
 Controls:
-	- WASD to move player character
+	- WASD to move player character (Triangle)
 	- Mouse Position to rotate character/aim
-	- Left CLick to shoot
-	- Right Click to reload while in reloading zone
+	- Left Click to shoot (Red Circle = Enemy)
+	- Right Click to reload while in reloading zone (Light Green central zone)
+		- indicator on player character shows when ammo is depleted
 	- Enter/Esc to Pause/Resume Game
 	
 Credits:
