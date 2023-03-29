@@ -11,7 +11,6 @@ public class PlayerBehavior : MonoBehaviour {
     private bool canLoad;
     private bool ReloadNeeded = false;
 
-
     Vector2 inputVector = Vector2.zero;
 
     [Header("Prefab References")]
@@ -65,28 +64,6 @@ public class PlayerBehavior : MonoBehaviour {
         }
         DisplayAmmo();
     }
-    void Fire() {
-        print(GameManager.instance.bullets);
-        // ammo check
-        if (bullets > 0) {
-            AudioSource.PlayClipAtPoint(fire, transform.position);
-            Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
-            bullets -= 1;
-            print(bullets);
-        }
-    }
-    // light up "barrel" if ammo remaining, turn off if out of ammo
-    void DisplayAmmo() {
-        if (bullets == 0) {
-            ReloadNeeded = true;
-            barrel.SetActive(false);
-        }
-        else {
-            ReloadNeeded = false;
-            barrel.SetActive(true);
-        }
-    }
-
     private void FixedUpdate() {
         //move player with input
         rb.AddForce(moveSpeed * Time.deltaTime * inputVector);
@@ -105,6 +82,27 @@ public class PlayerBehavior : MonoBehaviour {
         if (other.CompareTag("Load")) {
             canLoad = false;
             Debug.Log("Bye");
+        }
+    }
+    // fire if ammo allows
+    void Fire() {
+        print(GameManager.instance.bullets);
+        if (bullets > 0) {
+            AudioSource.PlayClipAtPoint(fire, transform.position);
+            Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
+            bullets -= 1;
+            print(bullets);
+        }
+    }
+    // light up "barrel" if ammo remaining, turn off if out of ammo
+    void DisplayAmmo() {
+        if (bullets == 0) {
+            ReloadNeeded = true;
+            barrel.SetActive(false);
+        }
+        else {
+            ReloadNeeded = false;
+            barrel.SetActive(true);
         }
     }
 }
