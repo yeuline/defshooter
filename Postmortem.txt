@@ -34,7 +34,8 @@ Would be nice to have:
 		// Simple Game Over Banner added; player removed on Game Over
 		// No start screen yet, Pause works (need to disable character movement)
 		// will add more information to scenes in the future.
-	x Sound/Particle effects when firing and on impact (bullet > enemy, enemy > wall etc.)
+	o Sound/Particle effects when firing and on impact (bullet > enemy, enemy > wall etc.)
+		// still need to add sound effects on collision with different objects
 	x Increasing difficulty
 	x increase in movement speed or durability of enemies
 
@@ -49,13 +50,17 @@ Development Tasks:
 Other UI
 High Score/Timer
 Start/Pause/Game Over Screen
-Sound Effects
+`Sound Effects
 Art Assets (Particles and Enemy/Player Sprites)
 
 I am satisfied with the character controls. In the original, there were a lot of problems and it did not feel nice to use either.
 This version I spent time to adjust things so it should play nicely. The reload area was tricky for me to create, but when I finally
-got it to work I feel like I learned a lot about triggers. For this project I tried to avoid looking at codes from the internet. If
-I did google things I would directly go to the Unity documentation page for the scripts mentioned and tried to work it out myself.
-I feel like this worked better than trying to change others' code to work for my specific case. I really like this simple concept
-and I will continue to work on it in the future. I have some character/enemy concept art sketched out and am excited to add them 
+got it to work I feel like I learned a lot about triggers. I also struggled a bit with scenes. I wanted to organize it to use an
+enum/switch case to switch between scenes, but it wasn't working well, so I loaded the scenes directly in the code where the switch
+would be triggered. Currently the game over and pause scenes are very simple, and at one point I was thinking of not having scenes
+and just having Text I could enable/diable using code. But in the future I want to add images and more complicated UI/UX, so I decided
+to keep the scenes even if they weren't really necessary at the moment. For this project I tried to avoid looking at codes from the
+internet. If I did google things I would directly go to the Unity documentation page for the scripts mentioned and tried to work it
+out myself. I feel like this worked better than trying to change others' code to work for my specific case. I really like this simple
+concept and I will continue to work on it in the future. I have some character/enemy concept art sketched out and am excited to add them 
 in later.
