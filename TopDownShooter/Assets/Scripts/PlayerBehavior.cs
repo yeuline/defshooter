@@ -9,19 +9,25 @@ public class PlayerBehavior : MonoBehaviour {
     public float angle;
     public int bullets;
     private bool canLoad;
+    private bool ReloadNeeded = false;
+
 
     Vector2 inputVector = Vector2.zero;
 
-    [Header("Prefabs References")]
+    [Header("Prefab References")]
     [SerializeField] GameObject targetPrefab;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawnPos;
+    [SerializeField] private GameObject barrel;
 
     [Header("Designer Variables")]
     public static int maxBullets = 10;
     [SerializeField] float moveSpeed = 100;
     [SerializeField] float velocityDampening = 0.98f;
+
+    [SerializeField] AudioClip fire;
+
 
     void Start() {
         bullets = maxBullets;
@@ -57,8 +63,8 @@ public class PlayerBehavior : MonoBehaviour {
             bullets = maxBullets;
             print(bullets);
         }
+        DisplayAmmo();
     }
-    [SerializeField] AudioClip fire;
     void Fire() {
         print(GameManager.instance.bullets);
         // ammo check
@@ -67,6 +73,17 @@ public class PlayerBehavior : MonoBehaviour {
             Instantiate(bulletPrefab, bulletSpawnPos.position, transform.rotation);
             bullets -= 1;
             print(bullets);
+        }
+    }
+    // light up "barrel" if ammo remaining, turn off if out of ammo
+    void DisplayAmmo() {
+        if (bullets == 0) {
+            ReloadNeeded = true;
+            barrel.SetActive(false);
+        }
+        else {
+            ReloadNeeded = false;
+            barrel.SetActive(true);
         }
     }
 
