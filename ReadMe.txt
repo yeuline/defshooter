@@ -1,8 +1,9 @@
 Controls:
 	- WASD to move player character
-	- Mpuse Position to rotate character/aim
+	- Mouse Position to rotate character/aim
 	- Left CLick to shoot
 	- Right Click to reload while in reloading zone
+	- Enter/Esc to Pause/Resume Game
 	
 Credits:
 	- Unity Documentation
